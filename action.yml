@@ -1,0 +1,27 @@
+name: "mender-convert action"
+description: "Convert debian based golden images in to mender compatible dual file system images"
+author: "Steven Leadbeater <info@ledsysconsultancy.com>"
+inputs:
+  artifact_name:
+    description: 'Name of the artifact to produce from the golden image'
+    required: true
+    default: '.'
+  disk_image:
+    description: 'The image file to be converted'
+    required: true
+    default: '.'
+  configurations:
+    description: 'Space delimited list of the configurations to use with the converter. See https://docs.mender.io/3.0/system-updates-debian-family/convert-a-mender-debian-image/customization'
+    required: true
+  overlay:
+    description: 'The "rootfs-overlay" is a method for providing new and modified files to appear in the output image without needing to modify the input image. See https://docs.mender.io/3.0/system-updates-debian-family/convert-a-mender-debian-image/customization#rootfs-overlays'
+    required: true
+    default: ''
+
+branding:
+  icon: "anchor"
+  color: "blue"
+
+runs:
+  using: docker
+  image: docker://ledsys/mender-convert-action:0.0.1
