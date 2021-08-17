@@ -17,6 +17,18 @@ inputs:
     description: 'The "rootfs-overlay" is a method for providing new and modified files to appear in the output image without needing to modify the input image. See https://docs.mender.io/3.0/system-updates-debian-family/convert-a-mender-debian-image/customization#rootfs-overlays'
     required: true
     default: ''
+  server_address:
+    description: 'Address of the mender server to upload to'
+    required: true
+    default: 'https://hosted.mender.io'
+  username:
+    description: 'Username on the server specified in the server_address'
+    required: true
+    default: ''
+  password:
+    description: 'Password for the user on the server specified in the server_address'
+    required: true
+    default: ''
 
 branding:
   icon: "anchor"
