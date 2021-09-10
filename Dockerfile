@@ -70,7 +70,5 @@ RUN sed -i -e 's/,metadata_csum//' /etc/mke2fs.conf
 RUN wget -q -O /usr/bin/mender-artifact https://downloads.mender.io/mender-artifact/$MENDER_ARTIFACT_VERSION/linux/mender-artifact \
     && chmod +x /usr/bin/mender-artifact
 
-WORKDIR /
-
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
